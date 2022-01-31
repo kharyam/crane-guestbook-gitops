@@ -1,0 +1,45 @@
+apiVersion: v1
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+    a3ViZUNBMB4XDTIyMDExNjE4MjIxNVoXDTMyMDExNTE4MjIxNVowFTETMBEGA1UE
+    AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ6L
+    0Ia4Nuy0P+BpRajWZWnZRq1aw4D4PFllvdFCYVK+I0nY0ZYIYq28jO4DN4MB8fHh
+    vOYABWELV7u4hmJLj1/4pjT4X66TaoFLNTHH/gUPaA//1qUZb8CzJenc3ypPdPcP
+    GEXdzg34NZBToYCkSEJJRE7Pvxc1SYNJzDUcVMLOojWtNRmtISK+M7qVOl67AL7E
+    UjPNyj9kg6A6Gs1NMBVhApT6U68bQTpJoFXXEd9F8FiPQrbC3s0uzPvr24COfzdg
+    k03FyO+EHnNCNv5Tc548XiXyXvV5JO4xwOpJ8Nlqe9HGmV4lPcEVjH+ofb/33vI7
+    RctppFbGDYcaGdSWuDkCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+    MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+    BBQFRL/AsfK0Dc0i3yX0vR3BsnCqfTANBgkqhkiG9w0BAQsFAAOCAQEASSeSHD6Q
+    zjyuvcqBArGUdZTC3gIZ96hvqm7QF+HIKwtlLjOI/kVhpxpN/DxeH231U0XhUMSJ
+    pDJttrnrU+DnjURznxEtRi74T6YllhX59e+MzXqS+9GSy92NgdiiQOsc+4qWsMqp
+    uDH9yx4z2bLgGHJ6A6wCAkRi3zoBSuDNSG9tmHlM+hLdaYOsqcoGi7tAy1WFlCHC
+    wDdQdaWY3MHw6VDFXEOWt6LdlMTRYfdUlajHz1m/UxHvpEz5WFvTj1DfrdJr8ew7
+    PNBED39gxtVXTyu9BaP1anQpnh8EmjHEIIE71QhYcFCLrlpUP50TW5Nfzy+iYkWA
+    ZUvbJx9U3KRTHA==
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  annotations:
+    kubernetes.io/description: Contains a CA bundle that can be used to verify the
+      kube-apiserver when using internal endpoints such as the internal service IP
+      or kubernetes.default.svc. No other usage is guaranteed across distributions
+      of Kubernetes clusters.
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca.crt: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubernetes.io/description: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2022-01-31T16:25:06Z"
+  name: kube-root-ca.crt
+  namespace: guestbook
